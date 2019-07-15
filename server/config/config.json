@@ -1,0 +1,26 @@
+{
+  "development": {
+    "username": "postgres",
+    "password": "net143256",
+    "database": "TodoList",
+    "host": "127.0.0.1",
+    "port": 5432,
+    "dialect": "postgres"
+  },
+  "test": {
+    "username": "root",
+    "password": null,
+    "database": "database_test",
+    "host": "127.0.0.1",
+    "dialect": "mysql",
+    "operatorsAliases": false
+  },
+  "production": {
+    "username": "postgres",
+    "password": "net143256",
+    "database": "TodoList",
+    "host": "127.0.0.1",
+    "port": 5432,
+    "dialect": "postgres"
+  }
+}
