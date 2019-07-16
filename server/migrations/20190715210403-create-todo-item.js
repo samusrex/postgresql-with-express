@@ -14,6 +14,7 @@ module.exports = {
       complete: {
         type: Sequelize.BOOLEAN
       },
+
       createdAt: {
         allowNull: false,
         type: Sequelize.DATE
@@ -21,8 +22,20 @@ module.exports = {
       updatedAt: {
         allowNull: false,
         type: Sequelize.DATE
-      }
-    });
+      },
+
+      TodoId: {
+        type: Sequelize.INTEGER,
+        onDelete: "CASCADE",
+        allowNull: false,
+        references: {
+          model: 'Todos',
+          key: 'id'
+         }
+        }
+       }
+
+    );
   },
   down: (queryInterface, Sequelize) => {
     return queryInterface.dropTable('TodoItems');
