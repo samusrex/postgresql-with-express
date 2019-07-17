@@ -14,16 +14,7 @@ module.exports = {
       complete: {
         type: Sequelize.BOOLEAN
       },
-
-      createdAt: {
-        allowNull: false,
-        type: Sequelize.DATE
-      },
-      updatedAt: {
-        allowNull: false,
-        type: Sequelize.DATE
-      },
-
+   
       TodoId: {
         type: Sequelize.INTEGER,
         onDelete: "CASCADE",

@@ -10,17 +10,18 @@ module.exports = (sequelize, DataTypes) => {
       type: DataTypes.BOOLEAN,
       defaultValue: false,
     },
+    
     TodoId:{
       type: DataTypes.INTEGER,
-    /*  references: {
+      references: {
         model: 'Todos',
-        key: "TodoId"
-    } */
-    }
+        key: "Id"
+    } 
+    }    
 
-    
-
-  });
+  },
+  {timestamps:false}
+  );
 
   TodoItem.associate = (models) => {
     

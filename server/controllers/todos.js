@@ -1,11 +1,14 @@
 const Todo = require('../models').Todo;
 const TodoItem = require('../models').TodoItem;
+const Sequelize = require('sequelize')
 
 module.exports = {
   create(req, res) {
+    
     return Todo
       .create({
         title: req.body.title,
+        description: req.body.description
       })
       .then(todo => res.status(201).send(todo))
       .catch(error => res.status(400).send(error));
@@ -13,15 +16,20 @@ module.exports = {
 
   list(req, res) {
     return Todo
-    .findAll({
-      attributes: ['id','title']
-    })
-    /*.findAll({
-      include: [{
+    .findAll(
+      /*{
+        attributes: ['id','title']
+      }
+      , */
+      {
+      include: [
+      {
         model: TodoItem,
-        as: 'todoItems',
-      }],
-    })   */
+      }
+      ]
+      }
+      )
+    
       .then(todos => res.status(200).send(todos))
       .catch(error => res.status(400).send(error));
   },
